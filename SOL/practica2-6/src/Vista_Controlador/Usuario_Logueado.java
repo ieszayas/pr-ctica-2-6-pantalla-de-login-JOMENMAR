@@ -4,6 +4,8 @@
  */
 package Vista_Controlador;
 
+import Modelo.Usuario;
+
 /**
  *
  * @author DAM2_05
@@ -13,8 +15,14 @@ public class Usuario_Logueado extends javax.swing.JFrame {
     /**
      * Creates new form Usuario
      */
+
     public Usuario_Logueado() {
         initComponents();
+    }
+
+    public Usuario_Logueado(String usr) {
+        initComponents();
+        Texto_Bienvenida.setText("El usuario "+ usr + " está logueado");
     }
 
     /**
@@ -26,18 +34,25 @@ public class Usuario_Logueado extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        Bienvenido = new javax.swing.JLabel();
         Texto_Bienvenida = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
+        Cerrar_Sesion = new javax.swing.JButton();
+        Imagen = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("BIENVENID@");
+        Bienvenido.setText("BIENVENID@");
 
-        jButton1.setText("Cerrar Sesion");
+        Texto_Bienvenida.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Media/image-removebg-preview.png"))); // NOI18N
+        Cerrar_Sesion.setText("Cerrar Sesion");
+        Cerrar_Sesion.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                Cerrar_SesionMouseReleased(evt);
+            }
+        });
+
+        Imagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Media/image-removebg-preview.png"))); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -46,35 +61,40 @@ public class Usuario_Logueado extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(32, 32, 32)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(139, 139, 139)
-                        .addComponent(jLabel2))
+                        .addComponent(Imagen))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(154, 154, 154)
-                        .addComponent(jLabel1))
+                        .addComponent(Bienvenido))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(107, 107, 107)
-                        .addComponent(Texto_Bienvenida, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(32, 32, 32)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(Cerrar_Sesion, javax.swing.GroupLayout.DEFAULT_SIZE, 315, Short.MAX_VALUE)
+                            .addComponent(Texto_Bienvenida, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap(33, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(44, 44, 44)
-                .addComponent(jLabel1)
+                .addComponent(Bienvenido)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel2)
+                .addComponent(Imagen)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(Texto_Bienvenida, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                .addComponent(Cerrar_Sesion)
                 .addGap(47, 47, 47))
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void Cerrar_SesionMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Cerrar_SesionMouseReleased
+        this.setVisible(false);
+        new login().setVisible(true);
+    }//GEN-LAST:event_Cerrar_SesionMouseReleased
 
     /**
      * @param args the command line arguments
@@ -112,10 +132,11 @@ public class Usuario_Logueado extends javax.swing.JFrame {
         });
     }
 
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Bienvenido;
+    private javax.swing.JButton Cerrar_Sesion;
+    private javax.swing.JLabel Imagen;
     private javax.swing.JLabel Texto_Bienvenida;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
 }

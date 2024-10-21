@@ -6,6 +6,7 @@ package Vista_Controlador;
 
 import Modelo.Usuario;
 import static Modelo.Usuario.crearUsuarios;
+import static Modelo.Usuario.getUsuarios;
 
 /**
  *
@@ -20,6 +21,7 @@ public class login extends javax.swing.JFrame {
         initComponents();
         crearUsuarios();
         Password.setEchoChar('*');
+        
     }
 
     /**
@@ -110,6 +112,7 @@ public class login extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void Mostrar_ContrasenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Mostrar_ContrasenhaActionPerformed
@@ -123,17 +126,16 @@ public class login extends javax.swing.JFrame {
     private void LoguearMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LoguearMouseReleased
         String nombre = Usuario_Intr.getText();
         String password = String.valueOf(Password.getPassword());
-        
-        boolean existe = false;
-        
-        Usuario u = new Usuario(nombre,password);
-        
-         if (u.comparar()) {
-            
-        }
 
-        
-        
+        Usuario u = new Usuario(nombre, password);
+
+        if (!u.comparar()) {
+            vibrarPantalla();
+            return;
+        }
+        this.setVisible(false);
+        new Usuario_Logueado(u.getNombre()).setVisible(true);
+
     }//GEN-LAST:event_LoguearMouseReleased
 
     /**
@@ -169,6 +171,27 @@ public class login extends javax.swing.JFrame {
                 new login().setVisible(true);
             }
         });
+    }
+
+    public void vibrarPantalla() {
+        final int originalX = this.getLocationOnScreen().x;  // Obtener la posición original en X
+        final int originalY = this.getLocationOnScreen().y;  // Obtener la posición original en Y
+
+        // Creamos un hilo para que no bloquee el hilo principal de la UI
+        new Thread(() -> {
+            try {
+                for (int i = 0; i < 10; i++) {
+                    // Mover la ventana a posiciones levemente distintas
+                    this.setLocation(originalX + (int) (Math.random() * 10 - 5),
+                            originalY + (int) (Math.random() * 10 - 5));
+                    Thread.sleep(20);  // Pausa breve entre cada movimiento
+                }
+                // Volver a la posición original al finalizar
+                this.setLocation(originalX, originalY);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }).start();
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

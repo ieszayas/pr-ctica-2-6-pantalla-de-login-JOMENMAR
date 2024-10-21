@@ -57,4 +57,10 @@ public class Usuario {
         return correcto;
     }
 
+    public static ArrayList<Usuario> getUsuarios() {
+        return usuarios;
+    }
+    
+    
+
 }
