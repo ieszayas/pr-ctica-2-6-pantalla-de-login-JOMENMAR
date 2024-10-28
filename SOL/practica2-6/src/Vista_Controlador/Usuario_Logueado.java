@@ -15,6 +15,11 @@ public class Usuario_Logueado extends javax.swing.JFrame {
     /**
      * Creates new form Usuario
      */
+<<<<<<< HEAD
+=======
+    
+    private String usr;
+>>>>>>> Parte2
 
     public Usuario_Logueado() {
         initComponents();
@@ -22,6 +27,10 @@ public class Usuario_Logueado extends javax.swing.JFrame {
 
     public Usuario_Logueado(String usr) {
         initComponents();
+<<<<<<< HEAD
+=======
+        this.usr = usr;
+>>>>>>> Parte2
         Texto_Bienvenida.setText("El usuario "+ usr + " está logueado");
     }
 
@@ -38,8 +47,15 @@ public class Usuario_Logueado extends javax.swing.JFrame {
         Texto_Bienvenida = new javax.swing.JLabel();
         Cerrar_Sesion = new javax.swing.JButton();
         Imagen = new javax.swing.JLabel();
+<<<<<<< HEAD
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+=======
+        Crear_Usuario_Boton = new javax.swing.JButton();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Principal");
+>>>>>>> Parte2
 
         Bienvenido.setText("BIENVENID@");
 
@@ -54,6 +70,16 @@ public class Usuario_Logueado extends javax.swing.JFrame {
 
         Imagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Media/image-removebg-preview.png"))); // NOI18N
 
+<<<<<<< HEAD
+=======
+        Crear_Usuario_Boton.setText("Nuevo usuario");
+        Crear_Usuario_Boton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                Crear_Usuario_BotonMouseReleased(evt);
+            }
+        });
+
+>>>>>>> Parte2
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -70,7 +96,12 @@ public class Usuario_Logueado extends javax.swing.JFrame {
                         .addGap(32, 32, 32)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(Cerrar_Sesion, javax.swing.GroupLayout.DEFAULT_SIZE, 315, Short.MAX_VALUE)
+<<<<<<< HEAD
                             .addComponent(Texto_Bienvenida, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+=======
+                            .addComponent(Texto_Bienvenida, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(Crear_Usuario_Boton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+>>>>>>> Parte2
                 .addContainerGap(33, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -82,9 +113,17 @@ public class Usuario_Logueado extends javax.swing.JFrame {
                 .addComponent(Imagen)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(Texto_Bienvenida, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+<<<<<<< HEAD
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
                 .addComponent(Cerrar_Sesion)
                 .addGap(47, 47, 47))
+=======
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Crear_Usuario_Boton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
+                .addComponent(Cerrar_Sesion)
+                .addGap(28, 28, 28))
+>>>>>>> Parte2
         );
 
         pack();
@@ -92,10 +131,22 @@ public class Usuario_Logueado extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void Cerrar_SesionMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Cerrar_SesionMouseReleased
+<<<<<<< HEAD
         this.setVisible(false);
         new login().setVisible(true);
     }//GEN-LAST:event_Cerrar_SesionMouseReleased
 
+=======
+        this.dispose();
+        new login().setVisible(true);
+    }//GEN-LAST:event_Cerrar_SesionMouseReleased
+
+    private void Crear_Usuario_BotonMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Crear_Usuario_BotonMouseReleased
+        this.dispose();
+        new CrearUsuario(usr).setVisible(true);
+    }//GEN-LAST:event_Crear_Usuario_BotonMouseReleased
+
+>>>>>>> Parte2
     /**
      * @param args the command line arguments
      */
@@ -136,6 +187,10 @@ public class Usuario_Logueado extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Bienvenido;
     private javax.swing.JButton Cerrar_Sesion;
+<<<<<<< HEAD
+=======
+    private javax.swing.JButton Crear_Usuario_Boton;
+>>>>>>> Parte2
     private javax.swing.JLabel Imagen;
     private javax.swing.JLabel Texto_Bienvenida;
     // End of variables declaration//GEN-END:variables

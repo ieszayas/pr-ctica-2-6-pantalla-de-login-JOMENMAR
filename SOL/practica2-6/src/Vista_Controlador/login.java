@@ -4,6 +4,10 @@
  */
 package Vista_Controlador;
 
+<<<<<<< HEAD
+=======
+import Modelo.IO.BBDD;
+>>>>>>> Parte2
 import Modelo.Usuario;
 import static Modelo.Usuario.crearUsuarios;
 import static Modelo.Usuario.getUsuarios;
@@ -17,9 +21,21 @@ public class login extends javax.swing.JFrame {
     /**
      * Creates new form login
      */
+<<<<<<< HEAD
     public login() {
         initComponents();
         crearUsuarios();
+=======
+    private boolean BBDD_creada = false;
+    public login() {
+        initComponents();
+        if (!BBDD_creada) {
+            BBDD.crearBaseDeDatos();
+            BBDD.crearTablaUsuarios();
+            crearUsuarios();
+            BBDD_creada = true;
+        }
+>>>>>>> Parte2
         Password.setEchoChar('*');
         
     }
@@ -40,9 +56,16 @@ public class login extends javax.swing.JFrame {
         Mostrar_Contrasenha = new javax.swing.JCheckBox();
         Loguear = new javax.swing.JButton();
         Password = new javax.swing.JPasswordField();
+<<<<<<< HEAD
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("LOGIN");
+=======
+        Crear_Usuario_Texto = new javax.swing.JLabel();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Login");
+>>>>>>> Parte2
 
         jLabel1.setText("Por favor introduzca sus credenciales para acceder: ");
 
@@ -64,11 +87,22 @@ public class login extends javax.swing.JFrame {
             }
         });
 
+<<<<<<< HEAD
+=======
+        Crear_Usuario_Texto.setText("Haz clic para crear una cuenta nueva");
+        Crear_Usuario_Texto.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Crear_Usuario_TextoMouseClicked(evt);
+            }
+        });
+
+>>>>>>> Parte2
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+<<<<<<< HEAD
                 .addGap(24, 24, 24)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -90,6 +124,34 @@ public class login extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(10, 10, 10)
                         .addComponent(jLabel1)))
+=======
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(24, 24, 24)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel3)
+                                    .addComponent(jLabel2))
+                                .addGap(46, 46, 46)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(Usuario_Intr, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(Loguear, javax.swing.GroupLayout.DEFAULT_SIZE, 133, Short.MAX_VALUE)
+                                                .addGap(18, 18, 18))
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(Password)
+                                                .addGap(18, 18, 18)))
+                                        .addComponent(Mostrar_Contrasenha))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(10, 10, 10)
+                                .addComponent(jLabel1))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(93, 93, 93)
+                        .addComponent(Crear_Usuario_Texto)))
+>>>>>>> Parte2
                 .addContainerGap(51, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -108,7 +170,13 @@ public class login extends javax.swing.JFrame {
                     .addComponent(Password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(36, 36, 36)
                 .addComponent(Loguear)
+<<<<<<< HEAD
                 .addContainerGap(46, Short.MAX_VALUE))
+=======
+                .addGap(26, 26, 26)
+                .addComponent(Crear_Usuario_Texto)
+                .addContainerGap(26, Short.MAX_VALUE))
+>>>>>>> Parte2
         );
 
         pack();
@@ -133,11 +201,23 @@ public class login extends javax.swing.JFrame {
             vibrarPantalla();
             return;
         }
+<<<<<<< HEAD
         this.setVisible(false);
+=======
+        this.dispose();
+>>>>>>> Parte2
         new Usuario_Logueado(u.getNombre()).setVisible(true);
 
     }//GEN-LAST:event_LoguearMouseReleased
 
+<<<<<<< HEAD
+=======
+    private void Crear_Usuario_TextoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Crear_Usuario_TextoMouseClicked
+        this.dispose();
+        new CrearUsuario(null).setVisible(true);
+    }//GEN-LAST:event_Crear_Usuario_TextoMouseClicked
+
+>>>>>>> Parte2
     /**
      * @param args the command line arguments
      */
@@ -195,6 +275,10 @@ public class login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+<<<<<<< HEAD
+=======
+    private javax.swing.JLabel Crear_Usuario_Texto;
+>>>>>>> Parte2
     private javax.swing.JButton Loguear;
     private javax.swing.JCheckBox Mostrar_Contrasenha;
     private javax.swing.JPasswordField Password;
