@@ -24,6 +24,11 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+              <Component id="Info_Label_2" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
+          </Group>
           <Group type="102" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
@@ -61,49 +66,44 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="Separador" max="32767" attributes="0"/>
                   </Group>
-              </Group>
-              <EmptySpace max="-2" attributes="0"/>
-          </Group>
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
-              <Component id="Info_Label_2" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
-          </Group>
-          <Group type="102" alignment="1" attributes="0">
-              <Group type="103" groupAlignment="1" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace max="32767" attributes="0"/>
+                  <Group type="102" alignment="1" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
-                              <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="Fecha_Nacimiento_Label" min="-2" max="-2" attributes="0"/>
-                                  <Component id="Correo_Label" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Group type="103" groupAlignment="1" attributes="0">
+                                          <Component id="Fecha_Nacimiento_Label" min="-2" max="-2" attributes="0"/>
+                                          <Component id="Correo_Label" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="Apellidos_Label" min="-2" max="-2" attributes="0"/>
+                                          <Component id="Nombre_Label" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="Texto_Nombre" pref="182" max="32767" attributes="0"/>
+                                  <Component id="Texto_Correo" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="Texto_Apellidos" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="Fecha_Nacimiento" alignment="0" min="-2" pref="140" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="Apellidos_Label" min="-2" max="-2" attributes="0"/>
-                                  <Component id="Nombre_Label" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
+                              <Component id="Boton_Volver" min="-2" pref="102" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="Boton_Agregar" min="-2" pref="100" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="Texto_Nombre" pref="182" max="32767" attributes="0"/>
-                          <Component id="Texto_Correo" alignment="0" max="32767" attributes="0"/>
-                          <Component id="Texto_Fecha_Nacimiento" alignment="0" min="-2" pref="149" max="-2" attributes="0"/>
-                          <Component id="Texto_Apellidos" alignment="0" max="32767" attributes="0"/>
-                      </Group>
-                  </Group>
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
-                      <Component id="Boton_Volver" min="-2" pref="102" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
-                      <Component id="Boton_Agregar" min="-2" pref="100" max="-2" attributes="0"/>
+                      <EmptySpace min="70" pref="70" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace min="-2" pref="73" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -137,20 +137,22 @@
               <Component id="Separador" min="-2" pref="10" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="Info_Label_2" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="Texto_Nombre" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="Nombre_Label" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="Texto_Apellidos" min="-2" max="-2" attributes="0"/>
-                  <Component id="Apellidos_Label" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="Texto_Fecha_Nacimiento" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="Fecha_Nacimiento_Label" alignment="3" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="Texto_Nombre" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="Nombre_Label" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="Texto_Apellidos" min="-2" max="-2" attributes="0"/>
+                          <Component id="Apellidos_Label" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                      <Component id="Fecha_Nacimiento_Label" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Component id="Fecha_Nacimiento" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -201,8 +203,6 @@
     </Component>
     <Component class="javax.swing.JTextField" name="Texto_Correo">
     </Component>
-    <Component class="javax.swing.JTextField" name="Texto_Fecha_Nacimiento">
-    </Component>
     <Component class="javax.swing.JTextField" name="Texto_Apellidos">
     </Component>
     <Component class="javax.swing.JLabel" name="Nombre_Label">
@@ -244,6 +244,11 @@
     <Component class="javax.swing.JPasswordField" name="Texto_Password">
     </Component>
     <Component class="javax.swing.JPasswordField" name="Texto_Password_Conf">
+    </Component>
+    <Component class="com.toedter.calendar.JDateChooser" name="Fecha_Nacimiento">
+      <Properties>
+        <Property name="toolTipText" type="java.lang.String" value=""/>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>

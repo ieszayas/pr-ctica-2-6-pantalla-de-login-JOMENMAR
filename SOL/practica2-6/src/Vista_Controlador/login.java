@@ -16,7 +16,7 @@ import static Modelo.Usuario.getUsuarios;
  */
 public class login extends javax.swing.JFrame {
 
-    private boolean BBDD_creada = false;
+    private static boolean BBDD_creada = false;
 
     public login() {
         initComponents();

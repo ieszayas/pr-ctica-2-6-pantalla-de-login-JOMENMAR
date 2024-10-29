@@ -53,7 +53,6 @@ public class CrearUsuario extends javax.swing.JFrame {
         Info_Label_2 = new javax.swing.JLabel();
         Texto_Nombre = new javax.swing.JTextField();
         Texto_Correo = new javax.swing.JTextField();
-        Texto_Fecha_Nacimiento = new javax.swing.JTextField();
         Texto_Apellidos = new javax.swing.JTextField();
         Nombre_Label = new javax.swing.JLabel();
         Apellidos_Label = new javax.swing.JLabel();
@@ -63,17 +62,18 @@ public class CrearUsuario extends javax.swing.JFrame {
         Boton_Volver = new javax.swing.JButton();
         Texto_Password = new javax.swing.JPasswordField();
         Texto_Password_Conf = new javax.swing.JPasswordField();
+        Fecha_Nacimiento = new com.toedter.calendar.JDateChooser();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Agregar nuevo usuario");
 
-        Info_Label.setText("Por favor, introduzca la informaciï¿½n del nuevo usuario:");
+        Info_Label.setText("Por favor, introduzca la información del nuevo usuario:");
 
         Usuario_Label.setText("Usuario");
 
-        Password_Label.setText("Contraseï¿½a");
+        Password_Label.setText("Contraseña");
 
-        Password_Conf_Label.setText("Confirmar contraseï¿½a");
+        Password_Conf_Label.setText("Confirmar contraseña");
 
         Info_Label_2.setText("Agregar datos opcionales del nuevo usuario:");
 
@@ -99,10 +99,16 @@ public class CrearUsuario extends javax.swing.JFrame {
             }
         });
 
+        Fecha_Nacimiento.setToolTipText("");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(34, 34, 34)
+                .addComponent(Info_Label_2)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -129,38 +135,34 @@ public class CrearUsuario extends javax.swing.JFrame {
                         .addGap(0, 72, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(Separador)))
-                .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(34, 34, 34)
-                .addComponent(Info_Label_2)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(Separador))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(Fecha_Nacimiento_Label)
-                                    .addComponent(Correo_Label))
-                                .addGap(18, 18, 18))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(Apellidos_Label)
-                                    .addComponent(Nombre_Label))
-                                .addGap(44, 44, 44)))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(Texto_Nombre, javax.swing.GroupLayout.DEFAULT_SIZE, 182, Short.MAX_VALUE)
-                            .addComponent(Texto_Correo)
-                            .addComponent(Texto_Fecha_Nacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Texto_Apellidos)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(61, 61, 61)
-                        .addComponent(Boton_Volver, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(Boton_Agregar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(73, 73, 73))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(Fecha_Nacimiento_Label)
+                                            .addComponent(Correo_Label))
+                                        .addGap(18, 18, 18))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(Apellidos_Label)
+                                            .addComponent(Nombre_Label))
+                                        .addGap(44, 44, 44)))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(Texto_Nombre, javax.swing.GroupLayout.DEFAULT_SIZE, 182, Short.MAX_VALUE)
+                                    .addComponent(Texto_Correo)
+                                    .addComponent(Texto_Apellidos)
+                                    .addComponent(Fecha_Nacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGap(61, 61, 61)
+                                .addComponent(Boton_Volver, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(Boton_Agregar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(70, 70, 70)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -187,18 +189,19 @@ public class CrearUsuario extends javax.swing.JFrame {
                 .addComponent(Separador, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(Info_Label_2)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Texto_Nombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Nombre_Label))
-                .addGap(36, 36, 36)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Texto_Apellidos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Apellidos_Label))
-                .addGap(29, 29, 29)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Texto_Fecha_Nacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Fecha_Nacimiento_Label))
+                .addGap(21, 21, 21)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(Texto_Nombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Nombre_Label))
+                        .addGap(36, 36, 36)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Texto_Apellidos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Apellidos_Label))
+                        .addGap(32, 32, 32)
+                        .addComponent(Fecha_Nacimiento_Label))
+                    .addComponent(Fecha_Nacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(27, 27, 27)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Texto_Correo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -215,9 +218,9 @@ public class CrearUsuario extends javax.swing.JFrame {
 
     private void Boton_AgregarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Boton_AgregarMousePressed
         if (validaciones()) {
-            BBDD.insertarUsuario(new Usuario(Texto_Usuario.getText(), String.valueOf(Texto_Password.getPassword()), Texto_Nombre.getText(), Texto_Fecha_Nacimiento.getText(), Texto_Apellidos.getText(), Texto_Correo.getText()));
+            BBDD.insertarUsuario(new Usuario(Texto_Usuario.getText(), String.valueOf(Texto_Password.getPassword()), Texto_Nombre.getText(), Fecha_Nacimiento.getDateFormatString(), Texto_Apellidos.getText(), Texto_Correo.getText()));
         }
-        
+
 //String nombre_usuario, String password, String nombre, String fecha_nacimiento, String apellidos, String correo
     }//GEN-LAST:event_Boton_AgregarMousePressed
 
@@ -297,15 +300,6 @@ public class CrearUsuario extends javax.swing.JFrame {
             }
         }
 
-        if (Texto_Apellidos.getText().isBlank() || Texto_Fecha_Nacimiento.getText().isBlank() || Texto_Nombre.getText().isBlank() || Texto_Correo.getText().isBlank()) {
-            Texto_Apellidos.setBorder(BorderFactory.createLineBorder(Color.RED, 2));
-            Texto_Fecha_Nacimiento.setBorder(BorderFactory.createLineBorder(Color.RED, 2));
-            Texto_Nombre.setBorder(BorderFactory.createLineBorder(Color.RED, 2));
-            Texto_Correo.setBorder(BorderFactory.createLineBorder(Color.RED, 2));
-            vibrarPantalla();
-            return false;
-        }
-
         if (!String.valueOf(Texto_Password.getPassword()).equals(String.valueOf(Texto_Password_Conf.getPassword()))) {
             Texto_Password.setBorder(BorderFactory.createLineBorder(Color.RED, 2));
             Texto_Password_Conf.setBorder(BorderFactory.createLineBorder(Color.RED, 2));
@@ -313,9 +307,33 @@ public class CrearUsuario extends javax.swing.JFrame {
             return false;
         }
 
-        if (!(Texto_Fecha_Nacimiento.getText().matches("\\\\d{2}-\\\\d{2}-\\\\d{4}")) && !Texto_Fecha_Nacimiento.getText().isBlank()) {
+        if (Texto_Apellidos.getText().isBlank()) {
+            Texto_Apellidos.setBorder(BorderFactory.createLineBorder(Color.RED, 2));
             vibrarPantalla();
-            Texto_Fecha_Nacimiento.setBorder(BorderFactory.createLineBorder(Color.RED, 2));
+            return false;
+        }
+
+        if (Fecha_Nacimiento.getDateFormatString().isBlank()) {
+            Fecha_Nacimiento.setBorder(BorderFactory.createLineBorder(Color.RED, 2));
+            vibrarPantalla();
+            return false;
+        }
+
+        if (Texto_Nombre.getText().isBlank()) {
+            Texto_Nombre.setBorder(BorderFactory.createLineBorder(Color.RED, 2));
+            vibrarPantalla();
+            return false;
+        }
+
+        if (Texto_Correo.getText().isBlank()) {
+            Texto_Correo.setBorder(BorderFactory.createLineBorder(Color.RED, 2));
+            vibrarPantalla();
+            return false;
+        }
+
+        if (!Fecha_Nacimiento.getDateFormatString().matches("\\d{2} [A-Za-z]{3} \\d{4}")) {
+            vibrarPantalla();
+            Fecha_Nacimiento.setBorder(BorderFactory.createLineBorder(Color.RED, 2));
             return false;
         }
 
@@ -332,6 +350,7 @@ public class CrearUsuario extends javax.swing.JFrame {
     private javax.swing.JButton Boton_Agregar;
     private javax.swing.JButton Boton_Volver;
     private javax.swing.JLabel Correo_Label;
+    private com.toedter.calendar.JDateChooser Fecha_Nacimiento;
     private javax.swing.JLabel Fecha_Nacimiento_Label;
     private javax.swing.JLabel Info_Label;
     private javax.swing.JLabel Info_Label_2;
@@ -341,7 +360,6 @@ public class CrearUsuario extends javax.swing.JFrame {
     private javax.swing.JSeparator Separador;
     private javax.swing.JTextField Texto_Apellidos;
     private javax.swing.JTextField Texto_Correo;
-    private javax.swing.JTextField Texto_Fecha_Nacimiento;
     private javax.swing.JTextField Texto_Nombre;
     private javax.swing.JPasswordField Texto_Password;
     private javax.swing.JPasswordField Texto_Password_Conf;
