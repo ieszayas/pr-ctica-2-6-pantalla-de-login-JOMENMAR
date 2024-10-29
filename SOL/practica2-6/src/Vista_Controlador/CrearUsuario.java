@@ -67,13 +67,13 @@ public class CrearUsuario extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Agregar nuevo usuario");
 
-        Info_Label.setText("Por favor, introduzca la información del nuevo usuario:");
+        Info_Label.setText("Por favor, introduzca la informaciï¿½n del nuevo usuario:");
 
         Usuario_Label.setText("Usuario");
 
-        Password_Label.setText("Contraseña");
+        Password_Label.setText("Contraseï¿½a");
 
-        Password_Conf_Label.setText("Confirmar contraseña");
+        Password_Conf_Label.setText("Confirmar contraseï¿½a");
 
         Info_Label_2.setText("Agregar datos opcionales del nuevo usuario:");
 
@@ -214,8 +214,10 @@ public class CrearUsuario extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void Boton_AgregarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Boton_AgregarMousePressed
-        BBDD.insertarUsuario(
-                new Usuario(Texto_Usuario.getText(), String.valueOf(Texto_Password.getPassword()), Texto_Nombre.getText(), Texto_Fecha_Nacimiento.getText(), Texto_Apellidos.getText(), Texto_Correo.getText()));
+        if (validaciones()) {
+            BBDD.insertarUsuario(new Usuario(Texto_Usuario.getText(), String.valueOf(Texto_Password.getPassword()), Texto_Nombre.getText(), Texto_Fecha_Nacimiento.getText(), Texto_Apellidos.getText(), Texto_Correo.getText()));
+        }
+        
 //String nombre_usuario, String password, String nombre, String fecha_nacimiento, String apellidos, String correo
     }//GEN-LAST:event_Boton_AgregarMousePressed
 
@@ -234,8 +236,8 @@ public class CrearUsuario extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public void vibrarPantalla() {
-        final int originalX = this.getLocationOnScreen().x;  // Obtener la posición original en X
-        final int originalY = this.getLocationOnScreen().y;  // Obtener la posición original en Y
+        final int originalX = this.getLocationOnScreen().x;  // Obtener la posiciï¿½n original en X
+        final int originalY = this.getLocationOnScreen().y;  // Obtener la posiciï¿½n original en Y
 
         // Creamos un hilo para que no bloquee el hilo principal de la UI
         new Thread(() -> {
@@ -246,7 +248,7 @@ public class CrearUsuario extends javax.swing.JFrame {
                             originalY + (int) (Math.random() * 10 - 5));
                     Thread.sleep(20);  // Pausa breve entre cada movimiento
                 }
-                // Volver a la posición original al finalizar
+                // Volver a la posiciï¿½n original al finalizar
                 this.setLocation(originalX, originalY);
             } catch (InterruptedException e) {
                 e.printStackTrace();
@@ -285,8 +287,8 @@ public class CrearUsuario extends javax.swing.JFrame {
             }
         });
     }
-    
-    public boolean validaciones(){
+
+    public boolean validaciones() {
         for (Usuario usuario : Usuario.getUsuarios()) {
             if (usuario.getNombre().equalsIgnoreCase(Texto_Nombre.getText())) {
                 Texto_Nombre.setBorder(BorderFactory.createLineBorder(Color.RED, 2));

@@ -154,9 +154,9 @@ public class BBDD {
             // Asignar los valores del objeto 'Usuario' a los parámetros del PreparedStatement
             pstmt.setString(1, usuario.getNombre_usuario());
             pstmt.setString(2, usuario.getPassword());
-            pstmt.setString(3, usuario.getFecha_nacimiento());  // Asumimos que la fecha está en formato 'yyyy-mm-dd'
+            pstmt.setString(3, usuario.getFecha_nac());  // Asumimos que la fecha está en formato 'yyyy-mm-dd'
             pstmt.setString(4, usuario.getNombre());
-            pstmt.setString(5, usuario.getApellidos());
+            pstmt.setString(5, usuario.getApellido());
             pstmt.setString(6, usuario.getCorreo());
 
             // Ejecutar la consulta

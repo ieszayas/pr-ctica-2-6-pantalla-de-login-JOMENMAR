@@ -4,10 +4,6 @@
  */
 package Modelo;
 
-<<<<<<< HEAD
-=======
-import Modelo.IO.BBDD;
->>>>>>> Parte2
 import java.util.*;
 
 /**
@@ -16,44 +12,35 @@ import java.util.*;
  */
 public class Usuario {
 
-<<<<<<< HEAD
-    private String nombre = "Sin nombre";
-    private String password = "";
-=======
     private String nombre_usuario = "Sin nombre";
     private String password = "";
-    private String fecha_nacimiento = "";
     private String nombre = "";
-    private String apellidos = "";
+    private String apellido = "";
+    private String fecha_nac = "";
     private String correo = "";
->>>>>>> Parte2
 
     private static ArrayList<Usuario> usuarios = new ArrayList();
 
-    public Usuario(String nombre_v, String password_v) {
-        nombre = nombre_v;
-        password = password_v;
-    }
-
-<<<<<<< HEAD
-=======
-    public Usuario(String nombre_usuario, String password, String nombre, String fecha_nacimiento, String apellidos, String correo) {
+    public Usuario(String nombre_usuario, String password) {
         this.nombre_usuario = nombre_usuario;
         this.password = password;
-        this.fecha_nacimiento = fecha_nacimiento;
+    }
+
+    public Usuario(String nombre_usuario, String password, String nombre, String apellido, String fecha_nac, String correo) {
+        this.nombre_usuario = nombre_usuario;
+        this.password = password;
         this.nombre = nombre;
+        this.apellido = apellido;
+        this.fecha_nac = fecha_nac;
         this.correo = correo;
-        this.apellidos = apellidos.trim();
-        
     }
 
->>>>>>> Parte2
-    public String getNombre() {
-        return nombre;
+    public String getNombre_usuario() {
+        return nombre_usuario;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setNombre_usuario(String nombre_usuario) {
+        this.nombre_usuario = nombre_usuario;
     }
 
     public String getPassword() {
@@ -64,22 +51,28 @@ public class Usuario {
         this.password = password;
     }
 
-<<<<<<< HEAD
-=======
-    public String getNombre_usuario() {
-        return nombre_usuario;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setNombre_usuario(String nombre_usuario) {
-        this.nombre_usuario = nombre_usuario;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
-    public String getFecha_nacimiento() {
-        return fecha_nacimiento;
+    public String getApellido() {
+        return apellido;
     }
 
-    public void setFecha_nacimiento(String fecha_nacimiento) {
-        this.fecha_nacimiento = fecha_nacimiento;
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
+    }
+
+    public String getFecha_nac() {
+        return fecha_nac;
+    }
+
+    public void setFecha_nac(String fecha_nac) {
+        this.fecha_nac = fecha_nac;
     }
 
     public String getCorreo() {
@@ -90,28 +83,13 @@ public class Usuario {
         this.correo = correo;
     }
 
-    public String getApellidos() {
-        return apellidos;
-    }
 
-    public void setApellidos(String apellidos) {
-        this.apellidos = apellidos;
-    }
-    
 
->>>>>>> Parte2
     public static void crearUsuarios() {
         usuarios.add(new Usuario("Kevin", "1234"));
         usuarios.add(new Usuario("Paul", "1234"));
         usuarios.add(new Usuario("Alba", "1234"));
         usuarios.add(new Usuario("Ignacio", "1234"));
-<<<<<<< HEAD
-=======
-       
-        for (Usuario usuario : usuarios) {
-            BBDD.insertarUsuario(usuario);
-        }
->>>>>>> Parte2
     }
 
     public boolean comparar() {
@@ -129,10 +107,5 @@ public class Usuario {
     public static ArrayList<Usuario> getUsuarios() {
         return usuarios;
     }
-<<<<<<< HEAD
-    
-    
-=======
->>>>>>> Parte2
 
 }
