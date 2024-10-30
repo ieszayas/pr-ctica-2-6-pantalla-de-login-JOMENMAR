@@ -7,6 +7,7 @@ package Vista_Controlador;
 import Modelo.IO.BBDD;
 import Modelo.Usuario;
 import java.awt.Color;
+import java.util.Date;
 import java.util.regex.Pattern;
 import javax.swing.BorderFactory;
 
@@ -26,7 +27,7 @@ public class CrearUsuario extends javax.swing.JFrame {
         initComponents();
     }
 
-    public CrearUsuario(String ventana) {
+    public CrearUsuario(String usuario) {
 
         initComponents();
         this.usuario = usuario;
@@ -100,6 +101,8 @@ public class CrearUsuario extends javax.swing.JFrame {
         });
 
         Fecha_Nacimiento.setToolTipText("");
+        Fecha_Nacimiento.setDateFormatString("dd MMM yyyy");
+        Fecha_Nacimiento.setFocusTraversalPolicyProvider(true);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -218,7 +221,7 @@ public class CrearUsuario extends javax.swing.JFrame {
 
     private void Boton_AgregarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Boton_AgregarMousePressed
         if (validaciones()) {
-            BBDD.insertarUsuario(new Usuario(Texto_Usuario.getText(), String.valueOf(Texto_Password.getPassword()), Texto_Nombre.getText(), Fecha_Nacimiento.getDateFormatString(), Texto_Apellidos.getText(), Texto_Correo.getText()));
+            BBDD.insertarUsuario(new Usuario(Texto_Usuario.getText(), String.valueOf(Texto_Password.getPassword()), Texto_Apellidos.getText(), Texto_Nombre.getText(), Fecha_Nacimiento.getDate(),  Texto_Correo.getText()));
         }
 
 //String nombre_usuario, String password, String nombre, String fecha_nacimiento, String apellidos, String correo
@@ -231,7 +234,7 @@ public class CrearUsuario extends javax.swing.JFrame {
             return;
         }
 
-        new Usuario_Logueado(usuario).setVisible(true);
+        new Principal(usuario).setVisible(true);
 
     }//GEN-LAST:event_Boton_VolverMousePressed
 
@@ -299,49 +302,67 @@ public class CrearUsuario extends javax.swing.JFrame {
                 return false;
             }
         }
-
+        Texto_Nombre.setBorder(BorderFactory.createLineBorder(null));
+ 
         if (!String.valueOf(Texto_Password.getPassword()).equals(String.valueOf(Texto_Password_Conf.getPassword()))) {
             Texto_Password.setBorder(BorderFactory.createLineBorder(Color.RED, 2));
             Texto_Password_Conf.setBorder(BorderFactory.createLineBorder(Color.RED, 2));
             vibrarPantalla();
             return false;
         }
-
+        Texto_Password.setBorder(BorderFactory.createLineBorder(null));
+        Texto_Password_Conf.setBorder(BorderFactory.createLineBorder(null));
+ 
         if (Texto_Apellidos.getText().isBlank()) {
             Texto_Apellidos.setBorder(BorderFactory.createLineBorder(Color.RED, 2));
             vibrarPantalla();
             return false;
         }
-
+        Texto_Apellidos.setBorder(BorderFactory.createLineBorder(null));
+ 
         if (Fecha_Nacimiento.getDateFormatString().isBlank()) {
             Fecha_Nacimiento.setBorder(BorderFactory.createLineBorder(Color.RED, 2));
             vibrarPantalla();
             return false;
         }
-
+        Fecha_Nacimiento.setBorder(BorderFactory.createLineBorder(null));
+ 
         if (Texto_Nombre.getText().isBlank()) {
             Texto_Nombre.setBorder(BorderFactory.createLineBorder(Color.RED, 2));
             vibrarPantalla();
             return false;
         }
-
+        Texto_Nombre.setBorder(BorderFactory.createLineBorder(null));
+ 
         if (Texto_Correo.getText().isBlank()) {
             Texto_Correo.setBorder(BorderFactory.createLineBorder(Color.RED, 2));
             vibrarPantalla();
             return false;
         }
-
-        if (!Fecha_Nacimiento.getDateFormatString().matches("\\d{2} [A-Za-z]{3} \\d{4}")) {
-            vibrarPantalla();
-            Fecha_Nacimiento.setBorder(BorderFactory.createLineBorder(Color.RED, 2));
-            return false;
+        Texto_Correo.setBorder(BorderFactory.createLineBorder(null));
+ 
+        String[] partesFecha = Fecha_Nacimiento.getDate().toString().split(" ");
+ 
+// Verificar que el arreglo tenga al menos 6 elementos (dow, mon, dd, hh:mm:ss, zzz, yyyy)
+        if (partesFecha.length >= 6) {
+            String dia = partesFecha[2]; // día
+            String mes = partesFecha[1]; // mes
+            String anio = partesFecha[5]; // año
+            if (!dia.matches("\\d{2}") || !mes.matches("(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)") || !anio.matches("\\d{4}")) {
+                Fecha_Nacimiento.setBorder(BorderFactory.createLineBorder(Color.RED, 2));
+                vibrarPantalla();
+                return false;
+            }
         }
-
+        Fecha_Nacimiento.setBorder(BorderFactory.createLineBorder(null));
+ 
         if (!Pattern.matches(correoRegex, Texto_Correo.getText())) {
             vibrarPantalla();
             Texto_Correo.setBorder(BorderFactory.createLineBorder(Color.RED, 2));
             return false;
         }
+        Texto_Correo.setBorder(BorderFactory.createLineBorder(null));
+ 
         return true;
     }
 

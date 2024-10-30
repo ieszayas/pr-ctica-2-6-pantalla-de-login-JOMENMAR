@@ -248,6 +248,8 @@
     <Component class="com.toedter.calendar.JDateChooser" name="Fecha_Nacimiento">
       <Properties>
         <Property name="toolTipText" type="java.lang.String" value=""/>
+        <Property name="dateFormatString" type="java.lang.String" value="dd MMM yyyy"/>
+        <Property name="focusTraversalPolicyProvider" type="boolean" value="true"/>
       </Properties>
     </Component>
   </SubComponents>

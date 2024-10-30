@@ -4,6 +4,7 @@
  */
 package Modelo;
 
+import static Modelo.IO.BBDD.insertarUsuario;
 import java.util.*;
 
 /**
@@ -16,17 +17,21 @@ public class Usuario {
     private String password = "";
     private String nombre = "";
     private String apellido = "";
-    private String fecha_nac = "";
+    private Date fecha_nac;
     private String correo = "";
 
     private static ArrayList<Usuario> usuarios = new ArrayList();
+    
+    public Usuario(){
+        
+    }
 
     public Usuario(String nombre_usuario, String password) {
         this.nombre_usuario = nombre_usuario;
         this.password = password;
     }
 
-    public Usuario(String nombre_usuario, String password, String nombre, String apellido, String fecha_nac, String correo) {
+    public Usuario(String nombre_usuario, String password, String nombre, String apellido, Date fecha_nac, String correo) {
         this.nombre_usuario = nombre_usuario;
         this.password = password;
         this.nombre = nombre;
@@ -67,11 +72,11 @@ public class Usuario {
         this.apellido = apellido;
     }
 
-    public String getFecha_nac() {
+    public Date getFecha_nac() {
         return fecha_nac;
     }
 
-    public void setFecha_nac(String fecha_nac) {
+    public void setFecha_nac(Date fecha_nac) {
         this.fecha_nac = fecha_nac;
     }
 
@@ -90,6 +95,10 @@ public class Usuario {
         usuarios.add(new Usuario("Paul", "1234"));
         usuarios.add(new Usuario("Alba", "1234"));
         usuarios.add(new Usuario("Ignacio", "1234"));
+        
+        for (Usuario usuario : usuarios) {
+            insertarUsuario(usuario);
+        }
     }
 
     public boolean comparar() {
